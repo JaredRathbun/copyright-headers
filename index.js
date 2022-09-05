@@ -1,19 +1,7 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
 const fs = require('fs');
 
-try {
-    // Get the JSON webhook payload for the event that triggered the workflow
-    const payload = JSON.stringify(github.context.payload, undefined, 2);
-    console.log(`The event payload: ${payload}`);
-
-    const path = core.getInput('path');
-    const headerTemplate = loadHeaderTemplate(core.getInput('template'));
-
-    walkDir(path, headerTemplate);
-} catch (error) {
-    core.setFailed(error.message);
-}
+const args = process.argv.splice(2);
+walkDir(args[0], args[1]);
 
 function walkDir(path, headerTemplate) {
     let isDir = fs.lstatSync(path).isDirectory();
@@ -23,8 +11,8 @@ function walkDir(path, headerTemplate) {
         let files = fs.readdirSync(path);
 
         for (let file of files) {
-            if (fs.lstatSync(file).isDirectory()) {
-                walkDir(file, headerTemplate);
+            if (fs.lstatSync(path + '/' + file).isDirectory()) {
+                walkDir(path + '/' + file, headerTemplate);
             } else {
                 applyHeader(file, headerTemplate);
             }

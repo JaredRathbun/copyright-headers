@@ -9,3 +9,6 @@ inputs:
     description: 'The header template to apply to the files.'
     required: true
     default: 'header.tmpl'
+runs:
+  using: 'node16'
+  main: 'index.js'

@@ -1,0 +1,19 @@
+{
+  "name": "copyright-headers",
+  "version": "1.0.0",
+  "description": "This action adds copyright/license headers to the supplied file. A template \r needs to be specified to apply to each file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaredRathbun/copyright-headers.git"
+  },
+  "author": "Jared Rathbun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JaredRathbun/copyright-headers/issues"
+  },
+  "homepage": "https://github.com/JaredRathbun/copyright-headers#readme"
+}

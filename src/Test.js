@@ -17,6 +17,6 @@
 *
 */
 
-public class Test {
+function blah() {
     
 }

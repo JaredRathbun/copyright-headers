@@ -6,4 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: npm install
-      - run: node deploy/index.js ../src
+      - run: ls
+      - run: ls ../
+      - run: node deploy/index.js src
